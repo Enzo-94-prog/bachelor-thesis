@@ -1,0 +1,608 @@
+
+/* Variabili globali per colori principali */
+:root {
+    --main-green: rgb(91, 159, 57);
+    --dark-green: #3E7C3A;
+    --background: #f5f9f6;
+    --text: #333;
+    --white: #fff;
+    --gray: #ccc;
+}
+
+
+
+/* Stile principale della barra di navigazione (navbar):
+   - Layout a flexbox per distribuire gli elementi con spazio tra di loro
+   - Allineamento verticale centrato
+   - Padding interno di 1 rem
+   - Permette il wrapping degli elementi se necessario (flex-wrap: wrap)
+   - Posizione sticky per mantenere la navbar visibile in cima alla pagina durante lo scroll
+   - Sfondo trasparente con effetto di sfocatura (blur) di 25px dietro la navbar
+   - Transizioni fluide di colore di sfondo e filtro sfocatura in 0.3 secondi
+   - Z-index alto per assicurare che la navbar sia sopra altri elementi */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    backdrop-filter: blur(25px);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    z-index: 999;
+}
+
+
+
+/* Quando la navbar ha la classe 'menu-open' (menu aperto),
+   imposta lo sfondo bianco pieno e rimuove l'effetto di sfocatura (blur).
+   L'uso di !important assicura che il backdrop-filter venga disattivato,
+   sovrascrivendo eventuali altre regole CSS. */
+.navbar.menu-open {
+    background-color: #fff;
+    backdrop-filter: none !important;
+}
+
+
+
+/* Contenitore interno della navbar:
+   - Utilizza flexbox per disporre gli elementi orizzontalmente
+   - Allinea verticalmente gli elementi al centro
+   - Distribuisce lo spazio rimanente tra gli elementi (space-between)
+   - Occupa tutta la larghezza disponibile (100%)
+   - Permette agli elementi di andare a capo se necessario (flex-wrap: wrap) */
+.navbar-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+
+/* Stile per il logo nella navbar:
+   - Dimensione del testo leggermente più grande (1.4rem)
+   - Testo in grassetto per risaltare
+   - Colore verde scuro definito dalla variabile CSS --dark-green
+   - Nessuna sottolineatura (link senza decorazione) */
+.navbar-logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--dark-green);
+    text-decoration: none;
+}
+
+
+
+/* Stile per il pulsante hamburger (icona menu) nella navbar:
+   - Posizione relativa per poter posizionare gli elementi interni (linee)
+   - Dimensioni fissate: larghezza 30px, altezza 22px
+   - Sfondo trasparente e senza bordi
+   - Cursore a mano (pointer) per indicare che è cliccabile
+   - Colore del testo (linee) definito dalla variabile --text
+   - Margine a destra per distanziare dal contenuto vicino */
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    margin-right: 1rem;
+}
+
+
+
+/* Stili per le tre linee dell'icona hamburger (prima, dopo e centrale tramite span):
+   - Contenuto vuoto, sono elementi decorativi
+   - Posizionamento assoluto per sovrapporli correttamente dentro il pulsante
+   - Allineamento a sinistra (left: 0)
+   - Larghezza al 100% del contenitore padre (hamburger)
+   - Altezza fissa di 3px per creare le linee sottili
+   - Colore di sfondo preso dalla variabile --text (colore testo)
+   - Angoli arrotondati con border-radius 2px per linee più morbide
+   - Transizione fluida di tutte le proprietà in 0.3s per animazioni */
+.hamburger::before,
+.hamburger::after,
+.hamburger span {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Stile per la linea centrale dell'icona hamburger (elemento span):
+   - Posizionata verticalmente al 50% rispetto al contenitore padre (hamburger)
+   - Traslata verso l'alto di metà altezza per centrarla esattamente al centro verticale
+   Questo posizionamento rende la linea centrale perfettamente centrata verticalmente */
+.hamburger span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+/* Stile per la linea superiore dell'icona hamburger (pseudo-elemento ::before):
+   - Posizionata in alto (top: 0) all'interno del contenitore hamburger,
+     rappresenta la linea superiore delle tre linee orizzontali */
+.hamburger::before {
+    top: 0;
+}
+
+
+
+/* Stile per la linea inferiore dell'icona hamburger (pseudo-elemento ::after):
+   - Posizionata in basso (bottom: 0) all'interno del contenitore hamburger,
+     rappresenta la linea inferiore delle tre linee orizzontali */
+.hamburger::after {
+    bottom: 0;
+}
+
+
+
+/* Stile applicato al pseudo-elemento ::before dell'icona hamburger quando ha la classe "active":
+   - Ruota la linea superiore di 45 gradi creando una diagonale
+   - Sposta la linea al centro verticalmente (top: 50%)
+   - Questo fa parte dell'animazione che trasforma l'hamburger in una "X" */
+.hamburger.active::before {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+
+
+/* Stile applicato al pseudo-elemento ::after dell'icona hamburger quando ha la classe "active":
+   - Ruota la linea inferiore di -45 gradi creando l'altra diagonale della "X"
+   - Sposta la linea verso il centro verticale (bottom: 50%)
+   - Completa l'animazione di trasformazione dell'hamburger in "X" */
+.hamburger.active::after {
+    transform: rotate(-45deg);
+    bottom: 50%;
+}
+
+
+
+/* Quando l'icona hamburger ha la classe "active",
+   nasconde la linea centrale impostando l'opacità a 0,
+   così solo le due linee ruotate (::before e ::after) sono visibili formando una "X" */
+.hamburger.active span {
+    opacity: 0;
+}
+
+
+
+/* Stile per la lista dei link di navigazione nella navbar:
+   - Rimuove i bullet points con list-style: none;
+   - Usa flexbox per disporre i link in orizzontale;
+   - Aggiunge uno spazio (gap) di 1rem tra i link;
+   - Rimuove margini e padding predefiniti per evitare spazi indesiderati */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Stile per i link all'interno degli elementi <li> della navbar:
+   - Rimuove la sottolineatura del testo con text-decoration: none e usa !important per forzare l'applicazione;
+   - Imposta il colore del testo usando la variabile CSS --text, con !important per priorità alta;
+   - Imposta position: relative per permettere posizionamenti assoluti dei pseudo-elementi figli come l'underline animato */
+.navbar-links li a {
+    text-decoration: none !important;
+    color: var(--text) !important;
+    position: relative;
+}
+
+
+
+/* Cambia il colore del testo del link al passaggio del mouse (hover),
+   utilizzando il verde principale definito nella variabile --main-green */
+.navbar-links li a:hover {
+    color: var(--main-green);
+}
+
+
+
+/* Effetto underline al passaggio */
+/* Pseudo-elemento ::after per creare una linea sottile (underline) sotto il link */
+/* Inizialmente la linea è invisibile (width: 0%), posizionata in basso a sinistra */
+/* Quando l'utente passa col mouse sul link, la linea si allargherà animandosi */
+/* Il colore della linea è il verde principale definito in --main-green */
+.navbar-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-green);
+    transition: width 0.3s ease-in-out;
+}
+
+
+
+/* Quando il link è in stato hover (passaggio del mouse), la linea sottostante (::after) si espande */
+/* La larghezza passa da 0% a 100%, creando un effetto underline animato che evidenzia il link */
+.navbar-links li a:hover::after {
+    width: 100%;
+}
+
+
+
+/* Contenitore delle icone nella navbar (utente, carrello, selettore lingua)
+   - Layout a riga con spazio di 1rem tra gli elementi
+   - Font leggermente più grande per le icone (1.2rem)
+   - Allineamento verticale centrato degli elementi */
+.navbar-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+
+
+/* Stile per le immagini icona (es. utente, carrello):
+   - Dimensioni fisse 20x20 pixel 
+   - Cambia il cursore a puntatore per indicare che è cliccabile 
+   - Transizione morbida di opacità in 0.2 secondi per l’effetto hover */
+.icon-img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+
+
+/* Al passaggio del mouse sull’icona, riduce l’opacità al 70% */
+/* Effetto visivo per indicare l’interattività */
+.icon-img:hover {
+    opacity: 0.7;
+}
+
+
+
+/* Stile per il selettore della lingua (dropdown):
+   - Senza bordo e sfondo trasparente per integrarsi con il design 
+   - Dimensione del testo leggibile e colore testo coerente 
+   - Puntatore a mano per indicare che è cliccabile */
+.language-select {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+
+
+/* Rimuove il contorno di focus predefinito quando il selettore lingua è attivo */
+/* Migliora l’estetica mantenendo l’accessibilità da tastiera con alternative (da valutare) */
+.language-select:focus {
+    outline: none;
+}
+
+
+
+/* Stile della sezione introduttiva principale: 
+   - Sfondo bianco con bordo sinistro verde per evidenziare 
+   - Spaziatura interna generosa e angoli arrotondati per un aspetto moderno 
+   - Margine inferiore per separare dagli elementi successivi 
+   - Ombra leggera per dare profondità 
+   - Posizione relativa per eventuali elementi assoluti figli 
+   - Testo centrato per un layout bilanciato */
+.intro {
+    background-color: var(--white);
+    border-left: 6px solid var(--main-green);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    text-align: center;
+}
+
+
+
+/* Contenitore del titolo introduttivo:
+   - Inline-block per occupare solo lo spazio necessario e poter applicare padding/margin
+   - Posizione relativa per permettere posizionamenti assoluti interni se necessari
+   - Padding a sinistra per distanziare eventuali icone o elementi decorativi
+   - Margine inferiore per separare il titolo dal paragrafo sottostante */
+.intro-title-wrapper {
+    display: inline-block;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* Icona a forma di foglia posizionata all'interno del titolo:
+   - Posizionamento assoluto per piazzarla esattamente rispetto al contenitore padre (intro-title-wrapper)
+   - Allineata a sinistra (left: 0) 
+   - Verticalmente centrata rispetto al contenitore con top: 50% e traslazione verso l'alto di metà altezza (transform: translateY(-50%))
+   - Dimensioni fisse di 40x40 pixel */
+.leaf-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+}
+
+
+
+/* Stile per il titolo principale della sezione intro
+   - Dimensione del testo impostata a 1.4rem
+   - Colore del testo impostato con la variabile CSS --dark-green
+   - Margine impostato a zero per rimuovere spaziature esterne predefinite */
+.intro-title {
+    font-size: 1.4rem;
+    color: var(--dark-green);
+    margin: 0;
+}
+
+
+
+/* Stile per il paragrafo introduttivo (intro-text)
+   - Rimuove i margini esterni impostandoli a zero
+   - Imposta la dimensione del font a 1.05rem per una lettura confortevole
+   - Colore del testo definito tramite la variabile CSS --text
+   - Altezza della linea (line-height) impostata a 1.6 per migliorare la leggibilità */
+.intro-text {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+
+/* Media query per schermi con larghezza minima di 769px (tipicamente desktop) */
+/* Nasconde l'icona hamburger impostandone display a none */
+/* Questo perché su desktop il menu di navigazione sarà sempre visibile e non serve il menu a scomparsa */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+  }
+}
+
+
+
+/* Media query per schermi con larghezza massima di 768px (tipicamente dispositivi mobili e tablet) */
+@media screen and (max-width: 768px) {
+    
+        
+    /* Navbar con sfondo semitrasparente e blur */
+    .navbar {
+        backdrop-filter: blur(25px);
+        background-color: rgba(255, 255, 255, 0.25);
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+
+    /* Quando il menu è aperto (classe menu-open), sfondo bianco e nessun blur */
+    .navbar.menu-open {
+        background-color: #fff;
+        backdrop-filter: none !important;
+    }
+
+
+    /* Contenitore navbar con disposizione flessibile e senza wrapping */
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        position: relative;
+    }
+
+
+    /* Ordine degli elementi per la visualizzazione mobile */
+    .hamburger {
+        order: 1; /* Icona hamburger primo elemento */
+    }
+
+
+    .navbar-logo {
+        order: 2;       /* Logo al centro */
+        margin-left: 0; /* Rimuove margine sinistro */
+    }
+
+
+    .navbar-icons {
+        order: 3; /* Icone utente, carrello e selettore lingua a destra */
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    /* Link della navbar nascosti di default, visualizzati come menu a tendina */
+    .navbar-links {
+        display: none;                     /* Nascosto quando menu chiuso */
+        position: absolute;                /* Posizionamento assoluto per menu a tendina */
+        top: 100%;                         /* Sotto la navbar */
+        left: 0;
+        width: 70%;                        /* Larghezza menu */
+        background-color: var(--white);    /* Sfondo bianco */
+        flex-direction: column;            /* Link disposti verticalmente */
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombra per evidenziare il menu */
+        z-index: 1000;                           /* Sopra altri elementi */
+    }
+
+
+    /* Classe attiva mostra il menu */
+    .navbar-links.active {
+        display: flex;
+    }
+
+
+    /* Ogni link occupa tutta la larghezza e testo allineato a sinistra */
+    .navbar-links li {
+        width: 100%;
+        text-align: left;
+    }
+    }
+
+
+
+/* Stili di base per il corpo della pagina */                                   
+body {
+    font-family: 'Inter', sans-serif;      /* Font principale con fallback sans-serif */
+    background-color: var(--background);   /* Colore di sfondo definito tramite variabile CSS */
+    margin: 0;                             /* Rimuove margini predefiniti */
+    padding: 0;                            /* Rimuove padding predefiniti */
+    color: var(--text);                    /* Colore del testo definito tramite variabile CSS */
+    line-height: 1.6;                      /* Altezza linea per migliorare leggibilità del testo */
+}
+
+   
+
+/* Stili per l'elemento header della pagina */
+header {
+    background-color: var(--white);  /* Sfondo bianco usando variabile CSS */
+    padding: 2rem;                   /* Spaziatura interna consistente su tutti i lati */
+    text-align: center;              /* Centra orizzontalmente il contenuto testuale */
+}
+
+
+
+/* Stili per il titolo principale (h1) dentro l'header */
+header h1 {
+    margin: 0;                 /* Rimuove margini predefiniti per evitare spazi indesiderati */
+    font-size: 1.8rem;         /* Imposta una dimensione del font più grande per il titolo */
+    color: var(--dark-green);  /* Colore testo verde scuro usando variabile CSS */
+}
+
+
+
+/* Stili per l'elemento main, contenitore principale del contenuto */
+main {
+    max-width: 800px;  /* Limita la larghezza massima a 800px per una lettura più comoda */
+    margin: 2rem auto; /* Centra orizzontalmente il main e aggiunge margine verticale di 2rem */
+    padding: 1rem;     /* Padding interno per distanziare il contenuto dai bordi */
+}
+
+
+
+/* Stili per la sezione introduttiva (.intro) */
+.intro {
+    text-align: center;  /* Centra il testo orizzontalmente all'interno della sezione */
+    margin-bottom: 2rem; /* Centra il testo orizzontalmente all'interno della sezione */
+}
+
+
+
+/* Stile per i paragrafi all'interno della sezione introduttiva (.intro) */
+.intro p {
+    font-size: 1.1rem; /* Imposta la dimensione del testo leggermente più grande per migliorare la leggibilità */
+}
+
+
+
+/* Contenitore per la lista dei report (.report-list) */
+.report-list {
+    display: grid; /* Usa il layout a griglia per organizzare gli elementi */
+    gap: 1rem;     /* Spazio di 1rem tra le celle della griglia */
+}
+
+
+
+/* Stile per la scheda singola del report (.report-card) */
+.report-card {
+    background-color: var(--white);           /* Sfondo bianco */
+    border-left: 6px solid var(--main-green); /* Bordo sinistro spesso e colorato di verde principale */
+    padding: 1.2rem;                          /* Spaziatura interna */
+    border-radius: 8px;                       /* Angoli arrotondati */
+    transition: box-shadow 0.3s;              /* Transizione fluida per l'effetto ombra */
+}
+
+
+
+/* Effetto al passaggio del mouse sulla scheda del report */
+.report-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera per dare profondità */
+}
+
+
+
+/* Titolo del report: dimensione e peso del font per evidenziare */
+.report-title {
+    font-size: 1.2rem; /* Dimensione testo leggermente più grande per il titolo */
+    font-weight: 600;  /* Peso medio-bold per maggiore evidenza */
+}
+
+
+
+/* Metadati del report: dimensione testo più piccola e colore grigio scuro per differenziare */
+.report-meta {
+    font-size: 0.9rem; /* Testo leggermente più piccolo per non competere con il titolo */
+    color: #666;     /* Colore grigio scuro per un aspetto sobrio e leggibile */
+}
+
+
+
+/* Anteprima del report: immagine responsiva con altezza massima e bordi arrotondati */
+.report-preview {
+    width: 100%;          /* Larghezza piena rispetto al contenitore */
+    max-height: 480px;    /* Altezza massima per limitare dimensioni eccessive */
+    object-fit: cover;    /* Ritaglia l'immagine per coprire l'area mantenendo proporzioni */
+    border-radius: 5px;   /* Angoli arrotondati per un aspetto più morbido */
+    margin-bottom: 1rem;  /* Spazio inferiore per distanziare dagli elementi sottostanti */
+}
+
+
+
+/* Stile per il pulsante di download */
+/* Pulsante con margine superiore, colore di sfondo verde principale e testo bianco */
+.download-btn {
+    margin-top: 0.8rem;                   /* Spazio sopra il pulsante */
+    display: inline-block;                /* Comportamento simile a link o pulsante inline */
+    background-color: var(--main-green);  /* Colore di sfondo verde definito nelle variabili */
+    color: var(--white);                  /* Testo bianco */
+    padding: 0.5rem 1rem;                 /* Spaziatura interna verticale e orizzontale */
+    border: none;                         /* Nessun bordo */
+    border-radius: 5px;                   /* Angoli arrotondati */
+    font-weight: 500;                     /* Peso medio del font per una buona leggibilità */
+    cursor: pointer;                      /* Cambia il cursore al passaggio per indicare cliccabilità */
+    text-decoration: none;                /* Nessuna sottolineatura */
+    transition: background-color 0.3s;    /* Transizione morbida del colore di sfondo al cambio stato */
+}
+
+
+
+/* Stile per il pulsante di download quando si passa il mouse sopra */
+/* Cambia il colore di sfondo a verde scuro per indicare l'interazione */
+.download-btn:hover {
+    background-color: var(--dark-green);
+}
+
+
+
+/* Stile del footer della pagina:
+   - Spazio superiore di 3rem per distanziarlo dal contenuto precedente
+   - Testo centrato, dimensione ridotta e colore grigio per un aspetto sobrio */
+footer {
+    margin-top: 3rem;   /* Spazio sopra il footer */
+    text-align: center; /* Testo centrato */
+    font-size: 0.9rem;  /* Dimensione del font leggermente più piccola */
+    color: #666;      /* Colore del testo grigio scuro */
+}
