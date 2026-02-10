@@ -67,7 +67,7 @@ The thesis is organized into two main parts:
 
 The full thesis document is available in PDF format at the following link:
 
-📄 [Project Work – Enzo Marcone (PDF)]( https://raw.githubusercontent.com/Enzo-94-prog/bachelor-thesis/main/thesis-document/Enzo_Marcone_Thesis.pdf)
+📄 [Project Work – Enzo Marcone (PDF)](https://raw.githubusercontent.com/Enzo-94-prog/bachelor-thesis/main/thesis-document/Enzo_Marcone_Thesis.pdf)
 
 ---
 
