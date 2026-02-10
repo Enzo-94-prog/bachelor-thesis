@@ -6,6 +6,22 @@ The thesis analyzes the topic of **corporate sustainability** through the **Fair
 
 ---
 
+## Table of Contents
+
+* [Academic Context](#academic-context)
+* [Thesis Objectives](#thesis-objectives)
+* [Methodology](#methodology)
+* [Structure of the Thesis](#structure-of-the-thesis)
+* [Thesis Document](#thesis-document)
+* [Repository Contents](#repository-contents)
+* [Project Structure](#project-structure)
+* [Project Screenshots](#project-screenshots)
+* [Relevant Technical Aspects](#relevant-technical-aspects)
+* [Demonstrated Skills](#demonstrated-skills)
+* [Final Notes](#final-notes)
+
+---
+
 ## Academic Context
 
 * **Degree Program:** Digital Business Informatics (L-31)
@@ -120,8 +136,9 @@ screenshots/
  └── Application screenshots
      Visual examples of the implemented features
 
-Project Work - Enzo Marcone.pdf
- └── Full academic thesis document
+thesis-document/
+ └── Project Work - Enzo Marcone.pdf
+     Full academic thesis document
      Theoretical analysis and description of the developed solution
 ```
 
