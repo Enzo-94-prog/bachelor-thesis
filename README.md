@@ -152,27 +152,39 @@ Below are some screenshots of the practical component developed within the proje
 
 ### Homepage (iOS, Safari)
 
-*(images unchanged)*
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0011.png" alt="Homepage (iOS, Safari)">
+</p>
 
 ### Content navigation and details (iOS, Safari)
 
-*(images unchanged)*
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0015.png" alt="Navigation menu (iOS, Safari)">
+</p>
 
 ### Sustainability report download (iOS, Safari)
 
-*(images unchanged)*
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0017.png" alt="Report download prompt (iOS, Safari)">
+</p>
 
 ### Homepage (Android, Google Chrome)
 
-*(images unchanged)*
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0018.png" alt="Homepage (Android, Google Chrome)">
+</p>
 
 ### Content navigation and details (Android, Google Chrome)
 
-*(images unchanged)*
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0022.png" alt="Navigation menu (Android, Google Chrome)">
+</p>
 
 ### Sustainability report download (Android, Google Chrome)
 
-*(images unchanged)*
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0024.png" alt="Report download (Android, Google Chrome)">
+</p>
 
 ---
 
