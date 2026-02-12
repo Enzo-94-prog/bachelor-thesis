@@ -19,6 +19,7 @@ The thesis analyzes the topic of **corporate sustainability** through the **Fair
 * [Relevant Technical Aspects](#relevant-technical-aspects)
 * [Demonstrated Skills](#demonstrated-skills)
 * [Final Notes](#final-notes)
+* [License](#license)
 
 ---
 
@@ -223,3 +224,13 @@ This work demonstrates competencies in:
 The thesis represents a synthesis of IT and managerial skills, oriented toward real business and sustainability contexts.
 
 Although developed in an academic environment, the project structure and documentation were designed to be understandable and evaluable also in a professional context.
+
+---
+
+## License
+
+This thesis is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).
+
+You may read and share this work for non-commercial purposes, provided proper attribution is given.  
+See the [LICENSE](LICENSE) file for full details.
+
