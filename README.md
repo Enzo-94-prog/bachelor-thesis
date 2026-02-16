@@ -99,11 +99,11 @@ http://localhost:8000
 
 To quickly understand the core logic, start from these files:
 
-- Navigation behavior → `navbar.js`
-- Language switching logic → `language.js`
-- Report section logic → `reports.js`
-- Styling and responsive layout → `style.css`
-- Main page structure → `index.html`
+- Navigation behavior → [navbar.js](navbar.js)
+- Language switching logic → [language.js](language.js)
+- Report section logic → [reports.js](reports.js)
+- Styling and responsive layout → [style.css](style.css)
+- Main page structure → [index.html](index.html)
 
 ---
 
