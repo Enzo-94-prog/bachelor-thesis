@@ -6,6 +6,22 @@ The thesis analyzes the topic of **corporate sustainability** through the **Fair
 
 ---
 
+## Website overview
+
+The project consists of a corporate website developed for the analysis of Fairphone's sustainability approach.
+
+Main functionalities:
+
+* Multi-page responsive website
+* Dynamic language switch (English / Dutch)
+* Interactive navigation menu
+* Structured presentation of sustainability information
+* Reusable layout components across pages
+
+The goal was to reproduce a realistic company website while applying web development best practices.
+
+---
+
 ## Table of Contents
 
 * [Academic Context](#academic-context)
