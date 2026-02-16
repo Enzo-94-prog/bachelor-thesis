@@ -1,252 +1,196 @@
-# Bachelor Thesis – Corporate Sustainability: The Fairphone Case
+# Fairphone Sustainability Website (Bachelor Thesis)
 
-Official repository of the **bachelor thesis** by **Enzo Marcone**, developed within the Degree Program in **Digital Business Informatics (L-31)**.
+A single-page corporate-style website developed as part of my Bachelor's Degree in **Information Technology for Digital Companies**.
 
-The thesis analyzes the topic of **corporate sustainability** through the **Fairphone case**, combining strategic analysis and web development skills.
+The project reproduces a realistic company website dedicated to sustainability reporting, combining **frontend development** (UI and interaction) and **business analysis** (content organization and structure).
+
+**Live demo**
+https://enzo-94-prog.github.io/bachelor-thesis/
 
 ---
 
-## Website overview
+## Project Overview
 
-The project consists of a corporate website developed for the analysis of Fairphone's sustainability approach.
+This project simulates a real corporate website rather than a simple static page.
 
-Main functionalities:
+The website presents structured sustainability content and includes interactive behavior implemented with **Vanilla JavaScript**, such as navigation handling and dynamic language switching.
 
-* Multi-page responsive website
+The goal was to translate a business case study (Fairphone’s sustainability strategy) into an actual working interface, focusing on:
+
+* information architecture
+* navigation usability
+* UI interaction logic
+* separation between structure, styling and behavior
+
+---
+
+## Preview
+
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0011.png" alt="Homepage preview" width="900">
+</p>
+
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0014.png" alt="Sustainability/report section preview" width="900">
+</p>
+
+<p align="center">
+  <img src="screenshots/Project Work - Enzo Marcone-0019.png" alt="Report/document preview" width="900">
+</p>
+
+---
+
+## Main Features
+
+* Multi-page website structure
 * Dynamic language switch (English / Dutch)
-* Interactive navigation menu
-* Structured presentation of sustainability information
-* Reusable layout components across pages
-
-The goal was to reproduce a realistic company website while applying web development best practices.
+* Interactive hamburger navigation menu
+* Sustainability reports section with linked documents
+* Responsive layout (desktop and mobile)
 
 ---
 
-## Table of Contents
+## Technologies Used
 
-* [Academic Context](#academic-context)
-* [Thesis Objectives](#thesis-objectives)
-* [Methodology](#methodology)
-* [Structure of the Thesis](#structure-of-the-thesis)
-* [Thesis Document](#thesis-document)
-* [Repository Contents](#repository-contents)
-* [Project Structure](#project-structure)
-* [Project Screenshots](#project-screenshots)
-* [Relevant Technical Aspects](#relevant-technical-aspects)
-* [Demonstrated Skills](#demonstrated-skills)
-* [Final Notes](#final-notes)
-* [License](#license)
+* **HTML5** — semantic page structure
+* **CSS3** — responsive layout and styling
+* **Vanilla JavaScript** — DOM manipulation and UI interaction
+
+No frameworks or external libraries were used intentionally to demonstrate core frontend skills.
 
 ---
 
-## Academic Context
+## What I Learned
 
-* **Degree Program:** Digital Business Informatics (L-31)
-* **Thesis Title:** *Corporate Sustainability: The Fairphone Case*
-* **Disciplines involved:**
+During this project I improved my ability to:
 
-  * Web Technologies
-  * Strategy, Organization and Marketing
-
-The work originated as a **Project Work** and combines theoretical analysis of corporate sustainability with the **development of a website** for consulting and downloading sustainability reports.
-
----
-
-## Thesis Objectives
-
-The thesis aims to:
-
-* Analyze the concept of **corporate sustainability** in the contemporary business environment
-* Study the sustainable business model adopted by **Fairphone**
-* Examine the company’s latest **sustainability report**
-* Design and develop a **web page** dedicated to consulting sustainability reports
-* Apply in practice the knowledge acquired during the academic program
+* design a complete website structure from scratch
+* manage DOM events and UI state without frameworks
+* implement multilingual interfaces (content switching)
+* keep HTML, CSS and JavaScript separated and maintainable
+* organize content and navigation similar to a real company website
 
 ---
 
-## Methodology
+## How to Run Locally
 
-The project was developed following a structured methodology consisting of multiple phases:
+You can run the project as a simple static website.
 
-1. Context analysis and topic selection
-2. Collection and study of sources related to corporate sustainability
-3. Analysis of the Fairphone case and its sustainability report
-4. Design and development of the website
-5. Verification of coherence between theoretical objectives and the implemented solution
+### Option 1 — VS Code (recommended)
 
-This approach allowed theory and practice to be connected in a coherent way.
+Open the folder → right click `index.html` → **Open with Live Server**
 
----
+### Option 2 — Python
 
-## Structure of the Thesis
+```bash
+python -m http.server 8000
+```
 
-The thesis is organized into two main parts:
-
-### Theoretical Part
-
-* Introduction to corporate sustainability
-* Analysis of environmental, social and economic dimensions
-* Overview of the reference industry
-
-### Practical Part
-
-* Analysis of the Fairphone case study
-* Study of the latest sustainability report
-* Description of the developed web page
+Then open:
+http://localhost:8000
 
 ---
 
-## Thesis Document
+# Technical Documentation
 
-The full thesis document is available in PDF format at the following link:
+## Key Files to Review
 
-📄 [Project Work – Enzo Marcone (PDF)](https://github.com/Enzo-94-prog/bachelor-thesis/blob/main/thesis-document/Project%20Work%20-%20Enzo%20Marcone.pdf?raw=1)
+To quickly understand the core logic, start from these files:
+
+- Navigation behavior → `navbar.js`
+- Language switching logic → `language.js`
+- Report section logic → `reports.js`
+- Styling and responsive layout → `style.css`
+- Main page structure → `index.html`
 
 ---
 
-## Repository Contents
+## Dynamic Language Switch
 
-The repository contains:
+The website implements a dynamic language switching mechanism.
 
-* The **complete thesis document** in PDF format
-* The **code and materials** related to the developed web project
-* Additional **support resources** used in the project work
+Instead of duplicating pages for each language, JavaScript updates the DOM text content based on the selected language.
+This approach is similar to how localization works in real websites.
 
-The structure is designed to make both the theoretical work and the practical component easily accessible.
+---
+
+## Navigation System
+
+The navigation menu is interactive and controlled via JavaScript.
+
+It manages:
+
+* menu opening and closing
+* responsive behavior on smaller screens
+* navigation usability between sections
+
+All interactions are implemented using browser APIs and event handling (no frameworks).
 
 ---
 
 ## Project Structure
 
-The repository contains both the academic thesis document and the web application developed as the practical component of the project.
-
-```
-index.html
- └── Main entry point of the website
-     Provides navigation and access to sustainability reports
-
-style.css
- └── Layout and visual design
-     Responsive styling and user interface formatting
-
-language.js
- └── Dynamic language management
-     Handles multilingual content and text switching
-
-navbar.js
- └── Navigation behavior
-     Controls menu interactions and responsive navigation
-
-reports.js
- └── Report handling logic
-     Manages report previews, selection and download actions
-
-documents/
- └── Sustainability reports (PDF)
-     Official Fairphone impact reports available for consultation and download
-
-img/
- └── Website assets
-     Icons, previews and graphical resources used in the interface
-
-screenshots/
- └── Application screenshots
-     Visual examples of the implemented features
-
-thesis-document/
- └── Project Work - Enzo Marcone.pdf
-     Full academic thesis document
-     Theoretical analysis and description of the developed solution
+```text
+bachelor-thesis/
+│
+├── index.html
+├── style.css
+├── navbar.js
+├── language.js
+├── reports.js
+│
+├── img/
+│   └── icons and UI assets
+│
+├── documents/
+│   └── Fairphone impact reports (PDF)
+│
+├── screenshots/
+│   └── project previews used in this README
+│
+└── thesis-document/
+    └── Project Work - Enzo Marcone.pdf
 ```
 
-The web application is implemented as a **static website** (HTML, CSS and JavaScript) and allows users to browse and download sustainability reports, demonstrating the practical application of web development concepts within the academic project.
+---
+
+## Design Choices
+
+**No framework**
+The project intentionally avoids frameworks to demonstrate understanding of DOM manipulation and event handling.
+
+**Single-page structure**
+A single HTML entry point keeps the experience lightweight and immediate, while JavaScript manages interactions and content switching.
+
+**Separation of concerns**
+HTML handles structure, CSS handles layout, JavaScript handles behavior.
 
 ---
 
-## Project Screenshots
+## Roadmap (Possible Improvements)
 
-Below are some screenshots of the practical component developed within the project work, related to the web page created for consulting and downloading sustainability reports.
-
-### Homepage (iOS, Safari)
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0011.png" alt="Homepage (iOS, Safari)">
-</p>
-
-### Content navigation and details (iOS, Safari)
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0015.png" alt="Navigation menu (iOS, Safari)">
-</p>
-
-### Sustainability report download (iOS, Safari)
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0017.png" alt="Report download prompt (iOS, Safari)">
-</p>
-
-### Homepage (Android, Google Chrome)
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0018.png" alt="Homepage (Android, Google Chrome)">
-</p>
-
-### Content navigation and details (Android, Google Chrome)
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0022.png" alt="Navigation menu (Android, Google Chrome)">
-</p>
-
-### Sustainability report download (Android, Google Chrome)
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0024.png" alt="Report download (Android, Google Chrome)">
-</p>
+* remember selected language using LocalStorage
+* improve navigation accessibility (keyboard navigation and focus states)
+* add a simple contact page
+* optimize image sizes for faster loading
+* add a “back to top” button for long pages
 
 ---
 
-## Relevant Technical Aspects
+## Disclaimer
 
-The practical component of the thesis was developed with particular attention to technical and design aspects, in order to translate theoretical content into a concrete and usable solution.
-
-Key technical elements include:
-
-* Design of an **informational website** for consulting and downloading sustainability reports
-* Use of **HTML5** for semantic content structuring
-* Use of **CSS3** for layout and visual organization
-* Use of **JavaScript** for dynamic interactions and navigation
-* Structured organization of content to improve **usability and readability**
-* Separation between structure, style and behavior according to **web development best practices**
-* Project and documentation management using **Git and GitHub**
-
-The choice of technologies and design approach was guided by the goal of creating a simple, clear and accessible solution consistent with sustainability principles.
+Fairphone is a trademark of its respective owners.
+This project is for educational and portfolio purposes only and is not affiliated with the company.
 
 ---
 
-## Demonstrated Skills
+## Author
 
-This work demonstrates competencies in:
-
-* Analysis of **corporate sustainability models**
-* Ability to connect **theory and practice**
-* Design and development of **web pages**
-* Project organization and documentation using GitHub
-* Technical and academic communication
-
----
-
-## Final Notes
-
-The thesis represents a synthesis of IT and managerial skills, oriented toward real business and sustainability contexts.
-
-Although developed in an academic environment, the project structure and documentation were designed to be understandable and evaluable also in a professional context.
+Enzo Marcone — Information Technology for Digital Companies graduate interested in Front-End Development and Web Technologies.
 
 ---
 
 ## License
 
-This thesis is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).
-
-You may read and share this work for non-commercial purposes, provided proper attribution is given.  
-See the [LICENSE](LICENSE) file for full details.
-
+This repository is licensed under **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**.
+See the `LICENSE` file for details.
