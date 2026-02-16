@@ -1,0 +1,26 @@
+# Editor settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+*~
+
+# Archives
+*.zip
+*.rar
+
+# Working folders (local exports / drafts)
+export/
+draft/
+out/
+
+# Design sources (not needed in repo)
+*.psd
+*.ai
