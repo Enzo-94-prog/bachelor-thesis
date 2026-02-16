@@ -26,17 +26,19 @@ The goal was to translate a business case study (Fairphone’s sustainability st
 
 ## Preview
 
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0011.png" alt="Homepage preview" width="900">
-</p>
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0014.png" alt="Sustainability/report section preview" width="900">
-</p>
-
-<p align="center">
-  <img src="screenshots/Project Work - Enzo Marcone-0019.png" alt="Report/document preview" width="900">
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="screenshots/Project%20Work%20-%20Enzo%20Marcone-0011.png" alt="Homepage preview" width="100%" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="screenshots/Project%20Work%20-%20Enzo%20Marcone-0014.png" alt="Sustainability/report section preview" width="100%" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="screenshots/Project%20Work%20-%20Enzo%20Marcone-0019.png" alt="Report/document preview" width="100%" loading="lazy">
+    </td>
+  </tr>
+</table>
 
 ---
 
