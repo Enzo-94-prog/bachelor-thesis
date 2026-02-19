@@ -1,6 +1,7 @@
-# Fairphone Sustainability Website (Bachelor Thesis)
 
+# Fairphone Sustainability Website (Bachelor Thesis)
 A single-page corporate-style website developed as part of my Bachelor's Degree in **Information Technology for Digital Companies**.
+![Glaucoperfumes preview](preview/social-preview.png)
 
 The project reproduces a realistic company website dedicated to sustainability reporting, combining **frontend development** (UI and interaction) and **business analysis** (content organization and structure).
 
@@ -149,6 +150,9 @@ bachelor-thesis/
 │
 ├── screenshots/
 │   └── project previews used in this README
+|
+├── preview/
+│   └── social_preview.png
 │
 └── thesis-document/
     └── Project Work - Enzo Marcone.pdf
